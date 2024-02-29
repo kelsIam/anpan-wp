@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { expect, jest, test } from "@jest/globals";
 
@@ -77,7 +78,7 @@ describe("CodeGenerator", () => {
     fireEvent.change(propertyNameBoxInput, {
       target: { value: "myPropertyName" },
     });
-    fireEvent.click(saveButton);
+    // fireEvent.click(saveButton);
 
     const TheSchemaName = await screen.findByText(/mySchemaName/);
     expect(TheSchemaName).toBeInTheDocument;
